@@ -30,7 +30,7 @@ RUN cd /tmp && wget https://github.com/statgenetics/cstatgen/archive/master.tar.
 
 # Install SEQLinkage
 ARG DUMMY=unknown
-RUN cd /tmp && wget https://github.com/gaow/SEQLinkage/archive/master.tar.gz && tar xzvf master.tar.gz && cd SEQLinkage-master && python setup.py install && rm -rf /tmp/*
+RUN cd /tmp && wget https://github.com/chong-cyber/SEQLinkage/archive/master.tar.gz && tar xzvf master.tar.gz && cd SEQLinkage-master && python setup.py install && rm -rf /tmp/*
 RUN mkdir -p /seqlink/.SEQLinkage/bin && cd /seqlink/.SEQLinkage && wget http://bioinformatics.org/spower/download/.private/genemap.hg19.txt http://bioinformatics.org/spower/download/.private/genemap.hg38.txt && cd bin && wget http://bioinformatics.org/spower/download/.private/linux/mlink http://bioinformatics.org/spower/download/.private/linux/unknown http://bioinformatics.org/spower/download/.private/linux/makeped http://bioinformatics.org/spower/download/.private/linux/pedcheck && chmod 777 -R /seqlink/.SEQLinkage
 ENV PYTHON_EGG_CACHE=/tmp/Python-Eggs
 
